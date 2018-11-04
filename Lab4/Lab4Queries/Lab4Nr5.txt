@@ -1,0 +1,7 @@
+
+/*Range 0-20
+
+task number 5*/
+
+select Nume_Student from studenti
+where Nume_Student like '%u'

@@ -1,0 +1,5 @@
+SELECT Nume_Profesor, Prenume_Profesor, COUNT(DISTINCT Id_Disciplina) AS Numar_Discipline
+FROM dbo.studenti_reusita
+INNER JOIN profesori
+ON studenti_reusita.Id_Profesor=profesori.Id_Profesor
+GROUP BY Nume_Profesor, Prenume_Profesor
