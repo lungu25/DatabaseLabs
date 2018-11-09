@@ -1,36 +1,45 @@
-# Laboratory work 4
+# Laboratory work 5
 
-### Task for Laboratory work nr 4:
+### Task for Laboratory work nr 5:
 
-### Task nr 5:
-Sa se afiseze lista studentilor al caror nume se termina in "u"
- 
+### Task nr 1:
+1. Completati urmatorul cod pentru a afisa cel mai mare numar dintre cele trei numere prezentate: 
+DECLARE @Nl INT, @N2 INT, @N3 INT; 
+DECLARE @MAI_MARE INT; 
+SET @Nl = 60 * RAND(); 
+SET @N2 = 60 * RAND(); 
+SET @N3 = 60 * RAND(); 
+-- Aici ar trebui plasate IF-urile--
+PRINT @Nl; 
+PRINT @N2;
+PRINT @N3; 
+PRINT 'Mai mare = ' + CAST(@MAI_MARE AS VARCHAR(2));  
 #### Sollution:
-In order to obtain all records that contains last letter "u" in their name, I used operator "like %u".
-% - The percent sign represents zero, one, or multiple characters, in the specified field.
+In order to obtain the greatest number between 3 numbers, we will use an auxiliary variable called MAI_MARE where we will store the value obtained from comparation of one number with other two numbers. Numbers will be stored in variables of Integer type as follow: @N1, @N2, @N3.
+For that we will use IF statement to compare them as follow: 
+IF @N1 > @N2 SET @MAI_MARE = @N1;
+IF @N1 < @N2 SET @MAI_MARE = @N2;
+IF @MAI_MARE < @N3 SET @MAI_MARE = @N3;	
 
-![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab4/Lab4Screens/task5.PNG)
+![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab5/Lab5Screens/Task1.PNG)
 
-### Task nr 22:
-Sa se obtina numarul de discipline predate de fiecare profesor (Nume_Profesor, Prenume _ Profesor).
-
-#### Sollution:
-In order to obain each discipline that was taught by each teacher, I used INNER JOIN from Id_Profesor that is located in 2 tables
-as follow:studenti_reusita, profesor. After JOIN I used aggregation function to count distinct disciplines, and also I used 
-GROUP BY function to group the result-set by one or more columns.
-
-![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab4/Lab4Screens/task22.PNG)
-
-
-### Task nr 25:
-In ce grupe de studii (Cod_ Grupa) figureaza mai mult de 24 de studenti? 
+### Task nr 2:
+Afisati primele zece date (numele, prenumele studentului) in functie de valoarea notei (cu exceptia notelor 6 si 8) a studentului la primul test al disciplinei Baze de date, folosind structura de altemativa IF. .. ELSE. Sa se foloseasca variabilele.
 
 #### Sollution:
-In order to obtain the Cod_Grupa where there are more than 24 students, I used a subquery.
-First query selects the Cod_Grupa, where the second query selects Id_Grupa where Id_Student is greater than 24.
-Also I used COUNT and Distinct Agregate function that will return a row for each unique COUNT.
+For this task, I declared a variable called COUNTER, that will count all students that have mark from 1 to 10 exept 6 and 8, also all students that attended Testul 1 and Disciplina be like "Baze de date".I also used COUNT aggregate function, in order to count all students that suites my condition. The number of students that correspond my condition, I stored in the variable CONTOR.
+And the last IF, ELSE statment was used in order to obtain just first 10 students that correspond condition.
 
-![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab4/Lab4Screens/task25.PNG)
+![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab5/Lab5Screens/Task2.PNG)
+
+
+### Task nr 3:
+Rezolvati aceesi sarcina, 1, apeland la structura selectiva CASE. 
+
+#### Sollution:
+In order to solve this task, I used pretty much the same structure as in task nr.1, but I changed the value of @MAI_MARE with it corresponding value by using CASE structure
+
+![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab5/Lab5Screens/Task3.PNG)
 
 ### Conclusion:
 At this laboratory work I got familiar to SQL. I learned how to create a query. Queries are different in their complexity level. The more complex queries use joins and aggreagation functions beside the regular clauses. Another important feature I have used in this laboratory work are the subqueries. Sometimes is much more easier to use a subquery beside multiple joins or other operations.
