@@ -42,4 +42,4 @@ In order to solve this task, I used pretty much the same structure as in task nr
 ![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab5/Lab5Screens/Task3.PNG)
 
 ### Conclusion:
-At this laboratory work I got familiar to SQL. I learned how to create a query. Queries are different in their complexity level. The more complex queries use joins and aggreagation functions beside the regular clauses. Another important feature I have used in this laboratory work are the subqueries. Sometimes is much more easier to use a subquery beside multiple joins or other operations.
+At this laboratory work I got familiar with variables, IF IF..ELSE and CASE statements. I also declare and initialize variables using RAND() function. I learned that IF and CASE can be switched, in depenedce of your condition and needs.
