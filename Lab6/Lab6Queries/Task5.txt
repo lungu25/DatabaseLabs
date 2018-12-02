@@ -1,0 +1,10 @@
+/* Task implimentation LunguM */
+CREATE TABLE profesori_new (
+	Id_Profesor INT PRIMARY KEY Clustered,
+	Nume_Profesor VARCHAR(60),
+	Prenume_Profesor VARCHAR(60),
+	Localitate VARCHAR(255) DEFAULT('mun.Chisinau'),
+	Adresa_1 VARCHAR(255),
+	Adresa_2 VARCHAR(255));
+
+	/* I need more explanation for point c */

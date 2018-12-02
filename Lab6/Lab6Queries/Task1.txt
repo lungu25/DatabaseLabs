@@ -1,0 +1,2 @@
+/* Task implimentation LunguM */
+select Adresa_Postala_Profesor from dbo.profesori

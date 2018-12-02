@@ -1,0 +1,13 @@
+/* Task implimentation LunguM */
+CREATE TABLE orarul (
+Id_Grupa SMALLINT,
+Id_Disciplina INT,
+Id_Profesor INT,
+Bloc CHAR(1) DEFAULT('B'),
+Ora TIME,
+Auditoriu INT);
+
+INSERT INTO orarul (Id_Grupa, Id_Disciplina, Id_Profesor, Bloc, Ora, Auditoriu)
+VALUES(1, 107, 101, 'B', '08:00', 202),
+	  (1, 108, 101, 'B', '11:30', 501),
+      (1, 119, 117, 'B', '13:00', 501)
