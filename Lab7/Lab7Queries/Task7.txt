@@ -1,0 +1,15 @@
+
+/* Task implementation LunguM */
+select Nume_Student from studenti.studenti
+where Nume_Student like '%u'
+
+SELECT Nume_Profesor, Prenume_Profesor, COUNT(DISTINCT Id_Disciplina) AS Numar_Discipline
+FROM studenti.studenti_reusita
+INNER JOIN cadre_didactice.profesori
+ON studenti.studenti_reusita.Id_Profesor=cadre_didactice.profesori.Id_Profesor
+GROUP BY Nume_Profesor, Prenume_Profesor
+
+SELECT Cod_Grupa FROM grupe WHERE Id_Grupa IN
+(SELECT Id_Grupa FROM studenti.studenti_reusita
+GROUP BY Id_Grupa
+HAVING COUNT(DISTINCT Id_Student) > 24)

@@ -1,0 +1,21 @@
+/* Task implementation LunguM */
+GO
+CREATE SYNONYM syn_studenti FOR studenti.studenti;
+GO
+CREATE SYNONYM syn_profesori FOR cadre_didactice.profesori;
+GO
+CREATE SYNONYM syn_reusita FOR studenti.studenti_reusita;
+
+select Nume_Student from syn_studenti
+where Nume_Student like '%u'
+
+SELECT Nume_Profesor, Prenume_Profesor, COUNT(DISTINCT Id_Disciplina) AS Numar_Discipline
+FROM syn_reusita
+INNER JOIN syn_profesori
+ON syn_reusita.Id_Profesor=syn_profesori.Id_Profesor
+GROUP BY Nume_Profesor, Prenume_Profesor
+
+SELECT Cod_Grupa FROM grupe WHERE Id_Grupa IN
+(SELECT Id_Grupa FROM syn_reusita
+GROUP BY Id_Grupa
+HAVING COUNT(DISTINCT Id_Student) > 24)
