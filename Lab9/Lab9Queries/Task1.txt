@@ -1,0 +1,14 @@
+/*Task implementation LunguM */
+DROP PROCEDURE IF EXISTS ProcedureT1
+GO
+CREATE PROCEDURE ProcedureT1
+/*I have no parameters here*/
+AS (
+	SELECT Nume_Profesor, Prenume_Profesor, COUNT(DISTINCT Id_Disciplina) AS Numar_Discipline
+	FROM studenti.studenti_reusita
+	INNER JOIN cadre_didactice.profesori
+	ON studenti_reusita.Id_Profesor = profesori.Id_Profesor
+	GROUP BY Nume_Profesor, Prenume_Profesor
+)
+
+EXECUTE ProcedureT1

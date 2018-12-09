@@ -1,0 +1,13 @@
+/*Task implementation LunguM */
+DROP FUNCTION IF EXISTS FunctionT6
+GO
+CREATE FUNCTION FunctionT6(@Nr_Studenti SMALLINT)
+RETURNS TABLE
+AS
+RETURN (
+SELECT Cod_Grupa FROM grupe WHERE Id_Grupa IN
+	(SELECT Id_Grupa FROM studenti.studenti_reusita
+	GROUP BY Id_Grupa
+	HAVING COUNT(DISTINCT Id_Student) > @Nr_Studenti))
+SELECT *
+FROM FunctionT6(24)

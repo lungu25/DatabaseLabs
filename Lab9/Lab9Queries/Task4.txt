@@ -1,0 +1,29 @@
+/*Task implementation LunguM */
+DROP PROCEDURE IF EXISTS ProcedureT4
+GO
+CREATE PROCEDURE ProcedureT4
+	@Nume_Profesor_Vechi VARCHAR(60),	
+	@Prenume_Profesor_Vechi VARCHAR(60),
+	@Nume_Profesor_Nou VARCHAR(60),
+	@Prenume_Profesor_Nou VARCHAR(60),
+	@Nume_Disciplina VARCHAR(255)
+AS
+BEGIN
+	IF(SELECT COUNT(*)
+			FROM cadre_didactice.profesori WHERE Nume_Profesor = @Nume_Profesor_Vechi AND Prenume_Profesor = @Prenume_Profesor_Vechi) <> 1
+		BEGIN RAISERROR('Profesorul vechi: Nu exista asa profesor', 16, 1) END
+	IF(SELECT COUNT(*)
+			FROM cadre_didactice.profesori WHERE Nume_Profesor = @Nume_Profesor_Nou AND Prenume_Profesor = @Prenume_Profesor_Nou) <> 1
+		BEGIN
+			RAISERROR('Profesorul vechi: Nu exista asa profesor', 16, 1) END
+	IF(SELECT COUNT(*)
+			FROM plan_studii.discipline WHERE Disciplina = @Nume_Disciplina) <> 1
+		BEGIN
+			RAISERROR('Disciplina: Nu exista asa desciplina', 16, 1) END
+	UPDATE studenti.studenti_reusita
+	SET Id_Profesor = (SELECT Id_Profesor FROM cadre_didactice.profesori WHERE Nume_Profesor = @Nume_Profesor_Nou AND Prenume_Profesor = @Prenume_Profesor_Nou)
+	WHERE Id_Profesor = (SELECT Id_Profesor FROM cadre_didactice.profesori WHERE Nume_Profesor = @Nume_Profesor_Vechi AND Prenume_Profesor = @Prenume_Profesor_Vechi) AND
+			Id_Disciplina = (SELECT Id_Disciplina FROM plan_studii.discipline WHERE Disciplina = @Nume_Disciplina)								
+END
+
+EXECUTE ProcedureT4 'Frent', 'Tudor', 'Popescu', 'Gabriel', 'Cercetari operationale'

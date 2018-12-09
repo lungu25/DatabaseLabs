@@ -1,0 +1,10 @@
+/*Task implementation LunguM */
+DROP PROCEDURE IF EXISTS ProcedureT22
+GO
+CREATE PROCEDURE ProcedureT22
+	@Nr_Studenti SMALLINT = NULL OUTPUT
+AS
+	SET @Nr_Studenti = (SELECT COUNT(DISTINCT(Id_Student)) FROM studenti.studenti_reusita WHERE Nota < 5 OR Nota = NULL)
+DECLARE @Nr_Students SMALLINT
+EXECUTE Procedure_Task222 @Nr_Students OUTPUT
+PRINT 'Numarul de studenti ce nu au sustinut macar o evaluare este:  ' + CAST(@Nr_Students AS VARCHAR(5))

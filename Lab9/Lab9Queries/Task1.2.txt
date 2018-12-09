@@ -1,0 +1,13 @@
+/*Task implementation LunguM */
+DROP PROCEDURE IF EXISTS ProcedureT2
+GO
+CREATE PROCEDURE ProcedureT2
+@Nr_Studenti SMALLINT = 24
+AS (
+Select Cod_Grupa from grupe where Id_Grupa IN
+	(Select Id_Grupa from studenti.studenti_reusita
+	group by Id_Grupa
+	having COUNT(Distinct Id_Student) > @Nr_Studenti)
+)
+
+EXECUTE ProcedureT2
