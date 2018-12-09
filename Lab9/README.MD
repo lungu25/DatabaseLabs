@@ -26,8 +26,8 @@ Sa se creeze o procedura stocata, care ar insera in baza de date informatii desp
 ### Task nr 4:
 Fie ca un profesor se elibereaza din functie la mijlocul semestrului. Sa se creeze o procedura stocata care ar reatribui inregistrarile din tabelul studenti_reusita unui alt profesor. Parametri de intrare: numele si prenumele profesorului vechi, numele ~i prenumele profesorului nou, disciplina. in cazul in care datele inserate sunt incorecte sau incomplete, sa se afiseze un mesaj de avertizare.
 #### Sollution:
-![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab8Screens/Task4.PNG)
-![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab8Screens/Task4.2.PNG)
+![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab9Screens/Task4.PNG)
+![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab9Screens/Task4.2.PNG)
 
 ### Task nr 5:
 Sa se creeze o procedura stocata care ar forma o lista cu primii 3 cei mai buni studenti la o disciplina, si acestor studenti sa le fie marita nota la examenul final cu un punct (nota maximala posibila este 10). in calitate de parametru de intrare, va servi denumirea disciplinei. Procedura sa returneze urmatoarele campuri: Cod_ Grupa, Nume_Prenume_Student, Disciplina, Nota _ Veche, Nota _ Noua. 
@@ -40,7 +40,7 @@ Sa se creeze functii definite de utilizator in baza exercitiilor (2 exercitii) d
 ![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab9Screens/Task6.PNG)
 
 ### Task nr 7:
-Sa se scrie functia care ar calcula varsta studentului. Sa se defineasca urmatorul format al functiei: <nume Juncfie>(<Data _ Nastere _Student>). 
+Sa se scrie functia care ar calcula varsta studentului. Sa se defineasca urmatorul format al functiei: nume_functie(Data _ Nastere _Student). 
 #### Sollution:
 ![alttext](https://github.com/lungu25/DatabaseLabs/blob/master/Lab9/Lab9Screens/Task7.PNG)
 
