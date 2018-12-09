@@ -1,0 +1,10 @@
+/*Task implementation LunguM */
+USE universitatea
+GO
+WITH CTE_2 AS (
+SELECT Nume_Student FROM studenti.studenti
+	WHERE Nume_Student like '%u'
+)
+
+SELECT *
+FROM CTE_2

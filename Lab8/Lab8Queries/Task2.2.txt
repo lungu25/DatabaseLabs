@@ -1,0 +1,11 @@
+/*Task implementation LunguM */
+INSERT INTO dbo.Task2 VALUES('78','Lungu', 'Mihail', '1995-05-05','mun. Chisinau, str. Tighina,75')
+--(1 row affected), After I added all columns in View2, I was able to insert a new record.
+
+UPDATE dbo.Task2
+SET Prenume_Student='Dragos' WHERE Data_Nastere_Student ='1995-05-05'
+--(1 row affected), I updated Prenume_Student column for record that have Birthdate '1995-05-05'.
+
+DELETE FROM dbo.Task2
+WHERE Prenume_Student='Dragos'
+--(1 row affected), Successfully removed record with Prenume_Student = 'Dragos'

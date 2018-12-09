@@ -1,0 +1,10 @@
+/*Task implementation LunguM */
+CREATE VIEW Task1 AS
+SELECT Nume_Profesor, Prenume_Profesor, COUNT(DISTINCT Id_Disciplina) AS Numar_Discipline
+FROM syn_reusita
+INNER JOIN syn_profesori
+ON syn_reusita.Id_Profesor=syn_profesori.Id_Profesor
+GROUP BY Nume_Profesor, Prenume_Profesor
+
+SELECT *
+FROM Task1

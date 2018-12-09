@@ -1,0 +1,11 @@
+/*Task implementation LunguM */
+INSERT INTO dbo.Task1 VALUES('Lungu', 'Mihail', 1)
+--Update or insert of view or function 'dbo.Task1' failed because it contains a derived or constant field.
+
+UPDATE dbo.Task1
+SET Prenume_Profesor = 'Ion' WHERE Prenume_Profesor = 'Andrei'
+--Cannot update the view or function 'dbo.Task1' because it contains aggregates, or a DISTINCT or GROUP BY clause, or PIVOT or UNPIVOT operator.
+
+DELETE FROM dbo.Task1
+WHERE Nr_Discipline_Predate = 3
+--View or function 'dbo.Task1_1' is not updatable because the modification affects multiple base tables.--

@@ -1,0 +1,3 @@
+SELECT        Id_Student, Nume_Student, Prenume_Student, Data_Nastere_Student, Adresa_Postala_Student
+FROM            dbo.syn_studenti
+WHERE        (Nume_Student LIKE '%u')

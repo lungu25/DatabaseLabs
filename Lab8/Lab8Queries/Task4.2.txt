@@ -1,0 +1,6 @@
+/*Task implementation LunguM */
+USE universitatea
+GO
+UPDATE dbo.Task2
+SET Nume_Student = 'Para'
+WHERE Nume_Student LIKE 'C%'
