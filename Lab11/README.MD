@@ -1,6 +1,6 @@
-# Laboratory work 10
+# Laboratory work 11
 
-### Task for Laboratory work nr 10:
+### Task for Laboratory work nr 11:
 
 ### Task nr 1:
 Sa se creeze un dosar Backup_labll. Sa se execute un backup complet al bazei de date universitatea in acest dosar. Fisierul copiei de rezerva sa se numeasca exercitiull.bak. Sa se scrie instructiunea SQL respectiva. 
