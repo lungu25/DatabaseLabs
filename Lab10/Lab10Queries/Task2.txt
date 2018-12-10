@@ -1,0 +1,22 @@
+/*Task implementation LunguM */
+	Drop trigger if exists Populate_Students_Table
+Go
+Create trigger Populate_Students_Table on studenti.studenti_reusita
+instead of insert 
+as set nocount on 
+	Declare @Id_Student int
+	Declare @Nume_Student varchar(50) = 'Nume_Nou'
+	Declare @Prenume_Student varchar(50) = 'Pren_Nou'
+	Declare @Data_Nastere date = null
+	Declare @Adresa varchar(255) = 'Soroca'
+
+	Select @Id_Student = inserted.Id_Student
+	from inserted
+	insert into studenti.studenti values (@Id_Student, @Nume_Student, @Prenume_Student, @Data_Nastere, @Adresa)
+	insert into studenti.studenti_reusita 
+	select * from inserted;
+
+insert into studenti.studenti_reusita values (777, 100, 100, 1, 'Examen', 10, null)
+
+Select * from studenti.studenti where Id_Student = 777
+Select * from studenti.studenti_reusita where Id_Student = 777

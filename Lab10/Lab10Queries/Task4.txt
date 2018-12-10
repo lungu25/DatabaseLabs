@@ -1,0 +1,17 @@
+/*Task implementation LunguM */
+Drop trigger if exists TriggerT4 on Database
+Go
+Create trigger TriggerT4
+on Database
+For alter_table
+as
+	Declare @Disciplina varchar(50)
+	SELECT @Disciplina=EVENTDATA().value('(/EVENT_INSTANCE/AlterTableActionList/*/Columns/Name)[1]', 'nvarchar(100)') 
+	
+	IF @Disciplina='Disciplina'
+	BEGIN 
+		PRINT ('Nu poate fi modificata coloana Disciplina')
+		rollback;
+	END
+
+	alter table plan_studii.discipline alter column Disciplina varchar(400)
