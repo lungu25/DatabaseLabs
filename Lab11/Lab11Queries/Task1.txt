@@ -1,0 +1,10 @@
+/*Task implementation LunguM */
+IF EXISTS (SELECT * FROM master.dbo.sysdevices WHERE name='device03')
+EXEC sp_dropdevice 'device03' , 'delfile';
+GO
+EXEC sp_addumpdevice 'DISK', 'device03', 'C:\bd_lab11\Backup_lab.11\exercitiul1.bak'
+GO
+BACKUP DATABASE universitatea
+TO device03
+WITH FORMAT, 
+		NAME = 'universitatea - Full Database Backup'

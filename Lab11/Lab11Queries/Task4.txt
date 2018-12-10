@@ -1,0 +1,17 @@
+/*Task implementation LunguM */
+IF EXISTS(SELECT * FROM master.sys.databases WHERE name='universitatea_lab11')
+DROP DATABASE universitatea_lab11
+GO
+RESTORE DATABASE universitatea_lab11
+FROM device03
+WITH MOVE 'University' TO 'C:\bd_lab11\Backup_lab.11\universitatea_lab11_task4.mdf',
+		MOVE 'University_log' TO 'C:\bd_lab11\Backup_lab.11\universitatea_lab11_log_task4.ldf',
+		NORECOVERY
+GO
+RESTORE DATABASE universitatea_lab11
+FROM device06
+WITH NORECOVERY
+GO
+RESTORE DATABASE universitatea_lab11
+FROM device07
+WITH NORECOVERY
